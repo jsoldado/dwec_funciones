@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Declaramos el literal de función diHola
+        var diHola=function(){
+            alert("Hola");
+        }
+        // Invocamos al literal de función diHola
+        diHola();
+
+        // Declaramos el literal de función esPrimo
+        var esPrimo=function(numero){
+            for (var i=2; i<numero; i++){
+                if(numero % i == 0) return false;
+            }
+            return true;
+        }
+        //Invocamos al literal de función esPrimo
+        var num=11;
+        alert(`El número ${num} es primo:` + esPrimo(num));
+        num=14;
+        alert(`El número ${num} es primo:` + esPrimo(num));
+
+        //Declaramos el literal de funcion areaRectangulo
+        var areaRectangulo=function(l1,l2){
+            return l1*l2;
+        }
+
+        var lado1=6;
+        var lado2=7;
+        //Invocamos al literal de función areaRectangulo
+        var area=areaRectangulo(lado1,lado2);
+        alert(`El área de un rectángulo de lado ${lado1} y lado ${lado2} es ${area}`);
+
+    </script>
+</body>
+</html>

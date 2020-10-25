@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function volumenCilindro(radio,altura){
+            function superficieCirculo(radio){
+                return Math.PI * Math.pow(radio,2);
+            }
+            return superficieCirculo(radio)*altura;
+        }
+
+
+        function testeo(){
+            var radio=3.5;
+            var altura=6.2;
+            var volumen=volumenCilindro(radio,altura);
+            alert(`El volumen de un cilindro de radio ${radio} y altura ${altura} es ${volumen}`);
+        }
+
+        function tiempoEjecucion(){
+            var numEjecuciones=100000;
+            var t1=new Date().getTime();
+            for(var i=0;i < numEjecuciones; i++){
+                volumenCilindro(5,7);
+            }
+            var t2=new Date().getTime();
+            var tiempoEjecucionMsg=(t2-t1)/numEjecuciones;
+            alert(`La funcion volumenCilindro tarda ${tiempoEjecucionMsg} msg en ejecutarse`);
+        }
+
+
+    </script>
+    <h1>Calcular volumen cilindro con función anidada y calcular tiempo de ejecución</h1>
+    <input type="button" onclick="testeo();" value="Testeo">
+    <input type="button" onclick="tiempoEjecucion();"  value="Tiempo ejecución">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var pasarAMayusculas=function(cadena){
+            return cadena.toUpperCase();
+        }
+        var pasarAMinusculas=function(cadena){
+            return cadena.toLowerCase();
+        }
+        var pasarPrimerLetraAMayusculas= function (cadena){
+            var palabras=cadena.split(" ");
+            var frase="";
+            palabras.forEach(function (item,index){
+                frase += item.charAt(0).toUpperCase() + item.substr(1) + " ";
+            });
+            return frase;
+        }
+
+        function procesarCadenas(proceso, cadena){
+            return proceso(cadena);
+        }
+
+        function testeo(){
+            var frase="en un lugar de la mancha";
+            var fraseSalida;
+            
+            fraseSalida=procesarCadenas(pasarAMayusculas,frase);
+            alert(`Usando función pasarAMayusculas la salida es: ${fraseSalida}`);
+
+            fraseSalida=procesarCadenas(pasarAMinusculas,frase);
+            alert(`Usando función pasarAMinusculas la salida es: ${fraseSalida}`);
+
+            fraseSalida=procesarCadenas(pasarPrimerLetraAMayusculas,frase);
+            alert(`Usando función pasarPrimerLetraAMayusculas la salida es: ${fraseSalida}`);
+        }
+
+    </script>
+    
+    <h1>Argumentos de tipo función</h1>
+    <input type="button" onclick="testeo();" value="Testear">
+
+</body>
+</html>

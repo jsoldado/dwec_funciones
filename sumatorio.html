@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Función con un número variable de argumentos
+        function sumatorio(/* */){
+            var sum=0;
+            for (var i=0; i < arguments.length ; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        }
+
+        function testeo(){
+            var suma;
+            suma=sumatorio(5,8,1,2);
+            alert(`sumatorio(5,8,1,2) devuelve ${suma}`);
+
+            suma=sumatorio(3,2,5,1,1,2);
+            alert(`sumatorio(3,2,5,1,1,2) devuelve ${suma}`);
+        }
+    </script>
+
+    <h1>Función que trabaja con un número variable de argumentos</h1>
+    <input type="button" onclick="testeo();" value="Testeo">
+</body>
+</html>
